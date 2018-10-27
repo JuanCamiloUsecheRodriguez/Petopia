@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import LandingPage from '../imports/ui/LandingPage.js';
 import App from '../imports/ui/App.js';
 import AddPetform from '../imports/ui/AddPetForm.js';
+import Profile from '../imports/ui/Profile.js'
+import AdoptionResponsibleForm from '../imports/ui/AdoptionResponsibleForm.js'
 import './main.html';
 
 Meteor.startup(() => {
@@ -14,6 +16,8 @@ Meteor.startup(() => {
       <Switch>
         <Route exact path="/" component={LandingPage}/>
         <Route  path="/addPet" component={AddPetform}/>
+        <Route  path="/profile" component={Profile}/>
+        <Route  path="/addProfileInformation" component={AdoptionResponsibleForm}/>
       </Switch>
     </App>
   </Router>

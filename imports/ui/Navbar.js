@@ -18,9 +18,8 @@ class Navbar extends Component {
              <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                  <div className="navbar-nav">
                  
-                   <a className="nav-item nav-link" href="/">Profile</a>
+                   <a className="nav-item nav-link" href="/profile">Profile</a>
                    <a className="nav-item nav-link" href="/addPet">Add Pet for Adoption</a>
-                   <a className="nav-item nav-link" href="/actualizarMateriales">Actualizar Materiales</a>
                    <a className="nav-item nav-link" href="/verRecoleccionesTerminadas">Ver Recolecciones Terminadas</a>
                    <AccountsUIWrapper/> 
              </div>

@@ -30,17 +30,15 @@ class AdoptionResponsibleForm extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        let Responsible ={
-            name: this.state.name,
-            id:this.state.id,
-            age: this.state.age,
-            address: this.state.address,
-            city: this.state.city,
-            telephoneNumber:this.state.telephoneNumber,
-            email: this.state.email
-        }
-
-        Meteor.call('empresas.add', empresa);   
+        Meteor.users.update({_id: Meteor.userId()}, {$set: {
+            'profile.name': this.state.name,
+            'profile.id': this.state.id,
+            'profile.age': this.state.age,
+            'profile.address': this.state.address,
+            'profile.city': this.state.city,
+            'profile.telephoneNumber': this.state.telephoneNumber,
+            'profile.email' :this.state.email
+        }}); 
         this.setState({
             name: '',
             id:'',
@@ -50,13 +48,15 @@ class AdoptionResponsibleForm extends Component {
             telephoneNumber: '',
             email: ''
         });
-
+        window.location.reload();
         }
 
 
   render() {
     return (
         <div className="container">
+         <br/>
+        <br/>
         <form onSubmit={this.handleSubmit}>
             <h1>Adoption Responsible Form</h1>
             <div className="form-group">
@@ -76,7 +76,7 @@ class AdoptionResponsibleForm extends Component {
                 <input className="form-control" type="text" name ="address" id="address" value={this.state.address} onChange={this.handleChange} />
             </div>
             <div className="form-group">
-                <label>City></label>
+                <label>City</label>
                 <input className="form-control" type="text" name ="city" id="city" value={this.state.city} onChange={this.handleChange} />
             </div>
             <div className="form-group">
@@ -85,7 +85,7 @@ class AdoptionResponsibleForm extends Component {
             </div>
             <div className="form-group">
                 <label>E-mail</label>
-                <input className="form-control" type="text" name ="telefono" id="telefono" value={this.state.telefono} onChange={this.handleChange} />
+                <input className="form-control" type="text" name ="email" id="emailo" value={this.state.email} onChange={this.handleChange} />
             </div>
             <button type="submit" className="btn btn-success">Submit</button>      
         </form> 
