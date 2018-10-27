@@ -95,7 +95,7 @@ class AdoptionResponsibleForm extends Component {
   }
 }
 
-FormRecolectores.propTypes = {
+AdoptionResponsibleForm.propTypes = {
     user: PropTypes.object
   };
   
@@ -104,4 +104,4 @@ FormRecolectores.propTypes = {
     return {
       user: Meteor.user()
     };
-  })(FormRecolectores);
+  })(AdoptionResponsibleForm);
