@@ -50,3 +50,8 @@ hr { background-color:white; height: 1px; border: 0; }
 .form-style-8 input[type="number"]{
   width: 50px;
 }
+
+.center-img{
+  display: block;
+  margin: 0 auto;
+}

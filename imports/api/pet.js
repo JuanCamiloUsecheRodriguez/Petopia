@@ -9,7 +9,7 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-    'pets.add':function(pPet){
+    'pet.add':function(pPet){
         Pet.insert(pPet);
     }
 });
