@@ -1,5 +1,6 @@
 body {
-  padding: 10px;
+
+  padding-top: 50px;
   font-family: sans-serif;
   font-family: 'Open Sans', sans-serif;
 }
@@ -26,3 +27,26 @@ hr { background-color:white; height: 1px; border: 0; }
   
 }
 
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 input[type="number"],
+.form-style-8 textarea,
+.form-style-8 select 
+{
+	outline: none;
+	padding: 3px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 5px;
+	height: 45px;
+}
+
+.form-style-8 input[type="number"]{
+  width: 50px;
+}
