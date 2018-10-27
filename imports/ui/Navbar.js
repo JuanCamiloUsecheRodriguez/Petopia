@@ -8,11 +8,9 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
 class Navbar extends Component {
   render() {
       return(
-          <nav className="navbar navbar-dark bg-dark  fixed-top" >
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top" >
             <a className="navbar-brand" href="/">
-                 <img src="http://www.serviecologico.com/wp-content/uploads/2017/09/Logo.png" width="50" height="25" className="d-inline-block align-top" alt=""/>
-                 &emsp;  
-                 SRA
+               <h1>Petopia</h1>
              </a>
              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                  <span className="navbar-toggler-icon"></span>

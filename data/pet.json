@@ -1,0 +1,17 @@
+[
+    {
+      "name": "Muneca",
+      "ageYears": 7,
+      "ageMonths": 8,
+      "petsonality": "calm",
+      "gender": "female",
+      "species": "dog",
+      "breedrace": "cocker spaniel",
+      "sterilized": true,
+      "likes": "Being cute :3",
+      "dislikes": "rainy days",
+      "publishDate": "26/10/2018",
+      "history": "she is not in adoption >:c Here people may add a reaaally long text",
+      "image": "https://scontent.fbog5-1.fna.fbcdn.net/v/t1.0-9/44846026_2778975668794520_2392547068796207104_n.jpg?_nc_cat=110&_nc_ht=scontent.fbog5-1.fna&oh=4928aae67071891670a12cf9c4c77b84&oe=5C86913A"
+    }
+]
