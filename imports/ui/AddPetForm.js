@@ -8,8 +8,8 @@ export default class AddPetForm extends Component {
 
     this.state={
         name: '',
-        ageYears:0,
-        ageMonths: 0,
+        ageYears:7,
+        ageMonths: 5,
         petsonality: '',
         gender: '',
         breed:'',
@@ -17,7 +17,7 @@ export default class AddPetForm extends Component {
         likes: '',
         dislikes: '',
         story: '',
-        image: ''
+        image: 'https://bit.ly/2CKhTxF'
     };
 
     //bind
@@ -51,10 +51,10 @@ export default class AddPetForm extends Component {
                   <Col>
                     <form className='form-style-8'>
                     
-                      <img src="https://images.pexels.com/photos/1302290/pexels-photo-1302290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" className="img-fluid" alt="petimage"/>
+                      <img src="https://bit.ly/2CKhTxF" className="img-fluid" alt="petimage"/>
                       <div className="form-group">
                         <label htmlFor="SubmitPhoto">Choose a nice picture!</label>
-                        <input type="file" className="form-control-file" id="petPhoto" name='image' value={image} onChange={this.handleChange}/>
+                        <input type="file" className="form-control-file" id="petPhoto" name='image' onChange={this.handleChange}/>
                       </div>
                     
                       Hi!, my name is 
