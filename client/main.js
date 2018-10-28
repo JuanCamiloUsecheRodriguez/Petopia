@@ -10,6 +10,7 @@ import AdoptionResponsibleForm from '../imports/ui/AdoptionResponsibleForm.js'
 import './main.html';
 import ViewPets from '../imports/ui/ViewPets.js';
 import PetDetails from '../imports/ui/PetDetails.js';
+import TodoList from '../imports/ui/TodoList.js';
 
 Meteor.startup(() => {
   render(
@@ -22,6 +23,7 @@ Meteor.startup(() => {
         <Route  path="/addProfileInformation" component={AdoptionResponsibleForm}/>
         <Route path="/ViewPets" component={ViewPets}/>
         <Route path="/petDetails" component={PetDetails}/>
+        <Route path="/AdoptionCalculator" component={TodoList}/>
       </Switch>
     </App>
   </Router>

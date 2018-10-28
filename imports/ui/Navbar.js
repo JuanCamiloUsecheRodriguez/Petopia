@@ -23,6 +23,7 @@ class Navbar extends Component {
                     <a className="nav-item nav-link" href="/profile">Profile</a>
                     <a className="nav-item nav-link" href="/addPet">Add Pet for Adoption</a>
                     <a className="nav-item nav-link" href="/ViewPets">View Pets</a>
+                    <a className="nav-item nav-link" href="/AdoptionCalculator">Adoption Calculator</a>
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     <AccountsUIWrapper/> 
               </div>
