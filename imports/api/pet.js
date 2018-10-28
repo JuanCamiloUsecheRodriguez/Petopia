@@ -6,6 +6,10 @@ if (Meteor.isServer) {
     Meteor.publish('pets', () => {
       return Pet.find({});
     });
+
+    Meteor.publish('petByID', function (pId) {
+        return Pet.find({_id:pId});
+    })  
 }
 
 Meteor.methods({
