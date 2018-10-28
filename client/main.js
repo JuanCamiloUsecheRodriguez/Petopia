@@ -8,6 +8,7 @@ import AddPetform from '../imports/ui/AddPetForm.js';
 import Profile from '../imports/ui/Profile.js'
 import AdoptionResponsibleForm from '../imports/ui/AdoptionResponsibleForm.js'
 import './main.html';
+import viewPets from '../imports/ui/viewPets.js';
 
 Meteor.startup(() => {
   render(
@@ -18,6 +19,7 @@ Meteor.startup(() => {
         <Route  path="/addPet" component={AddPetform}/>
         <Route  path="/profile" component={Profile}/>
         <Route  path="/addProfileInformation" component={AdoptionResponsibleForm}/>
+        <Route path="/viewPets" component={viewPets}/>
       </Switch>
     </App>
   </Router>
