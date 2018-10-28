@@ -29,6 +29,7 @@ class ViewPets extends Component {
                 name={ r.name}
                 description =  {desc}
                 idPet={r._id}
+                responsibleId={r.responsibleId}
                 />
                 </div>
                 

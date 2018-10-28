@@ -51,7 +51,7 @@ class AddPetForm extends Component {
 
     handleSubmit(event) {
       event.preventDefault();
-
+      try{
       let pet ={
         name: this.state.name,
         ageYears:this.state.ageYears,
@@ -62,14 +62,22 @@ class AddPetForm extends Component {
         sterilized: this.state.sterilized,
         likes: this.state.likes,
         dislikes: this.state.dislikes,
-        publishDate: Date.now(),
+        publishDate: Date(Date.now()),
         story: this.state.story,
         image: 'not an image in mongo',
         species: this.state.species,
-        inAdoption :true
-        
+        inAdoption :true,
+        rId: this.props.user._id,
+        rName: this.props.user.profile.name,
+        rIdNum: this.props.user.profile.id,
+        rAge: this.props.user.profile.age,
+        rAddress: this.props.user.profile.address,
+        rCity: this.props.user.profile.city,
+        rTelephoneNumber: this.props.user.profile.telephoneNumber,
+        rEmail: this.props.user.profile.email
+
       }
-      
+    
       Meteor.call('pet.add', pet);
 
       this.setState({
@@ -85,7 +93,10 @@ class AddPetForm extends Component {
         story: '',
         image: null
       });
-    
+    }
+    catch(err){
+      window.alert("You need to update your profile information first, please head to your profile through the navigation bar")
+    }
       
   }
 
@@ -163,10 +174,12 @@ class AddPetForm extends Component {
 
 AddPetForm.propTypes ={
   pets: PropTypes.array.isRequired,
+  user: PropTypes.object
 }
 export default withTracker(()=>{
   Meteor.subscribe('pets');
   return{
     pets: Pet.find({}).fetch(),
+    user: Meteor.user()
 };
 })(AddPetForm);

@@ -6,7 +6,7 @@ export default class PetCard extends Component {
         super(props);
     }
 
-    adoptButton(id){
+    adoptButton(id,responsibleId){
         localStorage.setItem('idPet', id);
         window.location.assign("/petDetails")
     }
@@ -16,7 +16,7 @@ export default class PetCard extends Component {
           image,  
           name,
           description,
-          idPet
+          idPet,
         } = this.props;
     
         return (
