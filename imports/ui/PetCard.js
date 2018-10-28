@@ -4,14 +4,19 @@ export default class PetCard extends Component {
 
     constructor(props) {
         super(props);
-      }
+    }
+
+    adoptButton(id){
+        localStorage.setItem('idPet', id);
+        window.location.assign("/petDetails")
+    }
     
       render() {
         let {
           image,  
-          productName,
+          name,
           description,
-          url
+          idPet
         } = this.props;
     
         return (
@@ -20,13 +25,13 @@ export default class PetCard extends Component {
           <img src={image}/>
           <div className='card-margin'>
             <div className='product-card-name'>
-          {productName}
+          {name}
         </div>
             <p className='text-center'>
           {description}
         </p>
             
-              <a className='buy-button' href={url}>Adopt now</a>
+              <button className=' btn buy-button' onClick={this.adoptButton.bind(this,idPet)}>Adopt now</button>
             </div>
           </div>
         );

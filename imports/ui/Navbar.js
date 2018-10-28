@@ -12,7 +12,7 @@ class Navbar extends Component {
         return(
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top" >
               <a className="navbar-brand" href="/">
-                <h1>Petopia</h1>
+              <strong>Petopia</strong>
               </a>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
@@ -22,7 +22,7 @@ class Navbar extends Component {
                   
                     <a className="nav-item nav-link" href="/profile">Profile</a>
                     <a className="nav-item nav-link" href="/addPet">Add Pet for Adoption</a>
-                    <a className="nav-item nav-link" href="/viewPets">View Pets</a>
+                    <a className="nav-item nav-link" href="/ViewPets">View Pets</a>
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     <AccountsUIWrapper/> 
               </div>
@@ -34,7 +34,7 @@ class Navbar extends Component {
       return(
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top" >
             <a className="navbar-brand" href="/">
-               <h1>Petopia</h1>
+               <strong>Petopia</strong>
              </a>
              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                  <span className="navbar-toggler-icon"></span>
@@ -44,7 +44,7 @@ class Navbar extends Component {
                  
                    <a className="nav-item nav-link" href="/profile">Profile</a>
                    <a className="nav-item nav-link" href="/addPet">Add Pet for Adoption</a>
-                   <a className="nav-item nav-link" href="/viewPets">View Pets</a>
+                   <a className="nav-item nav-link" href="/ViewPets">View Pets</a>
                    <AccountsUIWrapper/> 
              </div>
              </div>

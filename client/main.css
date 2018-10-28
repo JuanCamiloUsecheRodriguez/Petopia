@@ -1,5 +1,5 @@
 body {
-  padding-top: 50px;
+  padding-top: 100px;
   font-family: sans-serif;
   font-family: 'Open Sans', sans-serif;
 }
@@ -71,6 +71,7 @@ h3 {
   padding: 1.5rem 2rem;
   box-sizing: border-box;
   background-color: #ecf0f1;
+  
 }
 
 .product-card-name {
@@ -105,7 +106,7 @@ h3 {
   flex-flow: column;
   width: 300px;
   height: 450px;
-
+  margin: 20px 0px;
   -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
 	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);

@@ -23,7 +23,8 @@ class AddPetForm extends Component {
         likes: '',
         dislikes: '',
         story: '',
-        image: null
+        image: null,
+        species:'Cat'
     };
 
     //bind
@@ -64,6 +65,8 @@ class AddPetForm extends Component {
         publishDate: Date.now(),
         story: this.state.story,
         image: 'not an image in mongo',
+        species: this.state.species,
+        inAdoption :true
         
       }
       
@@ -108,6 +111,12 @@ class AddPetForm extends Component {
                         <label htmlFor="SubmitPhoto">Choose a nice picture!</label>
                         <input type="file" className="form-control-file" id="petPhoto" name='image' onChange={this.handleImageChange}/>
                       </div>
+
+                      I'm a <select name='species' onChange={this.handleChange}>
+                        <option value='Cat'>Cat</option>
+                        <option value ='Dog'>Dog</option>
+                      </select>
+                      <br/> 
                     
                       Hi!, my name is 
                       <input type='text' placeholder='Lupe' name='name' value={name} onChange={this.handleChange}/> 
