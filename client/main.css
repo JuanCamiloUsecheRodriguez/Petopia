@@ -13,7 +13,10 @@ hr { background-color:white; height: 1px; border: 0; }
   
   font-family: 'Proza Libre', sans-serif;
 }
-
+h3 {
+  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
 .pet-background{
   background-color: black !important;
   color: aliceblue;
@@ -54,4 +57,12 @@ hr { background-color:white; height: 1px; border: 0; }
 .center-img{
   display: block;
   margin: 0 auto;
+}
+
+#petopia { 
+  color: white;
+}
+
+.wrapper {
+  text-align: center;
 }
