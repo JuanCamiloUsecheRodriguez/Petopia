@@ -122,7 +122,7 @@ class AddPetForm extends Component {
                       <input type='text' placeholder='Lupe' name='name' value={name} onChange={this.handleChange}/> 
                       and I am 
                       <input type='number' placeholder='7' min='0' name='ageYears' value={ageYears} onChange={this.handleChange}/> 
-                      years and 
+                      years old and 
                       <input type='number' placeholder='5' min='0' name='ageMonths' value={ageMonths} onChange={this.handleChange}/>months old.<br/>
                       My gender is 
                       <select name='gender' onChange={this.handleChange}>

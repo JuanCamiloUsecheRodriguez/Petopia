@@ -20,10 +20,36 @@ import {Pet} from '../api/pet.js';
         return this.props.pets.map((r,i)=>{
         return(
             <div className = "container" >
+                <h3>Hi! my name is {r.name} and I am {r.ageYears} old and
+                {r.ageMonths} months old.</h3>
+                <br/>
+                <h3>My gender is {r.gender} and my breed is {r.breed} 
+                . I have a {r.petsonality} petsonality. I really love
+                {r.likes}, I dislike {r.dislikes}.</h3>
+    
+                <h3> {r.ageYears}</h3>
                <br/>
                <strong>Name : </strong><h3>{r.name}</h3>
                <hr/>
                <strong>Age Years : </strong><h3>{r.ageYears}</h3>
+               <hr/>
+               <strong>Age Months : </strong><h3>{r.ageYears}</h3>
+               <hr/>
+               <strong>Petsonality : </strong><h3>{r.ageYears}</h3>
+               <hr/>
+               <strong>Gender : </strong><h3>{r.ageYears}</h3>
+               <hr/>
+               <strong>Species : </strong><h3>{r.ageYears}</h3>
+               <hr/>
+               <strong>Breed : </strong><h3>{r.ageYears}</h3>
+               <hr/>
+               <strong>Sterilized : </strong><h3>{r.ageYears}</h3>
+               <hr/>
+               <strong>Likes : </strong><h3>{r.ageYears}</h3>
+               <hr/>
+               <strong>Dislikes : </strong><h3>{r.ageYears}</h3>
+               <hr/>
+               <strong>Pet's story : </strong><h3>{r.ageYears}</h3>
                <hr/>
             </div>
         )
@@ -34,14 +60,11 @@ import {Pet} from '../api/pet.js';
   render() {
       console.log(this.props.pets)
             return (
-                <div className = "container">
+                <div>
                 <br/>
+                <h1 className = "text-center">Pet Details</h1>
                 <br/>
-                <h3 className = "text-center"></h3>
-                    <br/>
-                    <div class="wrapper">
                     {this.renderPetInfo()}
-                    </div>
                     <br/>
                 </div>  
             )
