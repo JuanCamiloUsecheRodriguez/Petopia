@@ -11,24 +11,28 @@ import {Pet} from '../api/pet.js';
         this.state={
             pet: 0
         }
-        this.state.pet = localStorage.getItem('pet');
+        console.log(localStorage.getItem('idPet'))
+        this.state.pet = localStorage.getItem('idPet');
         this.renderPetInfo= this.renderPetInfo.bind(this);
     }
 
     renderPetInfo(){
+        return this.props.pets.map((r,i)=>{
         return(
             <div className = "container" >
                <br/>
-               <strong>Name : </strong><h3>{this.props.pet.name}</h3>
+               <strong>Name : </strong><h3>{r.name}</h3>
                <hr/>
-               <strong>Age Years : </strong><h3>{this.props.pet.ageYears}</h3>
+               <strong>Age Years : </strong><h3>{r.ageYears}</h3>
                <hr/>
             </div>
         )
+        })
     }
 
 
   render() {
+      console.log(this.props.pets)
             return (
                 <div className = "container">
                 <br/>
@@ -48,11 +52,11 @@ import {Pet} from '../api/pet.js';
 
 
 PetDetails.propTypes = {
-    pets: PropTypes.object
+    pets: PropTypes.array.isRequired
   };
 export default withTracker(() => {
     Meteor.subscribe('petByID')  
     return {
-      pets:  Pet.find(this.state.pet).fetch()
+      pets:  Pet.find(localStorage.getItem('idPet')).fetch()
     };
   })(PetDetails);

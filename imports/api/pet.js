@@ -8,7 +8,7 @@ if (Meteor.isServer) {
     });
 
     Meteor.publish('petByID', function (pId) {
-        return Pet.find({_id:pId});
+        return Pet.find({});
     })  
 }
 
