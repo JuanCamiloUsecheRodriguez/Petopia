@@ -52,7 +52,7 @@ class Navbar extends Component {
       )    
   }
 }
-
+}
 Navbar.propTypes = {
   user: PropTypes.object
 };
