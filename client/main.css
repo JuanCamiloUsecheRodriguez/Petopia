@@ -12,7 +12,10 @@ hr { background-color:white; height: 1px; border: 0; }
 .proza-libre{
   font-family: 'Proza Libre', sans-serif;
 }
-
+h3 {
+  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
 .pet-background{
   background-color: black !important;
   color: aliceblue;
@@ -53,10 +56,6 @@ hr { background-color:white; height: 1px; border: 0; }
 .center-img{
   display: block;
   margin: 0 auto;
-}
-
-.buy-button{
-  color:yellow;
 }
 
 
@@ -119,4 +118,12 @@ hr { background-color:white; height: 1px; border: 0; }
 
 .card-margin{
   padding: 30px;
+}
+
+#petopia { 
+  color: white;
+}
+
+.wrapper {
+  text-align: center;
 }

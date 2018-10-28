@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {withTracker} from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
-import AccountsUIWrapper from './AccountsUIWrapper.js';
 
  class Profile extends Component {
 
@@ -20,7 +19,28 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
     };
     renderAccountInfo(){
         return(
-            <li>Name : {this.props.user.profile.name}</li>
+            <div className = "container" >
+                <br/>
+                <strong>Name : </strong><h3>{this.props.user.profile.name}</h3>
+                <hr/>
+                <strong>ID : </strong><h3>{this.props.user.profile.id}</h3>
+                <hr/>
+                <strong>Age : </strong><h3>{this.props.user.profile.age}</h3>
+                <hr/>
+                🏠
+                <strong>Address: </strong><h3>{this.props.user.profile.address}</h3>
+                <hr/>
+                🏢
+                 <strong>City: </strong><h3>{this.props.user.profile.city}</h3>
+                <hr/>
+                📞
+                <strong>Telephone Number : </strong><h3>{this.props.user.profile.telephoneNumber}</h3>
+                <hr/>
+                📧
+                <strong>Email : </strong><h3>{this.props.user.profile.email}</h3>
+                <hr/>
+                <br/>
+            </div>
         )
     }
 
@@ -35,11 +55,15 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
       else{
         if(this.props.user.profile === undefined){
             return (
-                <div>
+                <div className = "container">
                 <br/>
                 <br/>
-                <h3>We need you to update your account information to continue, please click the button below to add the information</h3>
-                <button className='btn' onClick={this.addAccountInfo}>Update account information</button>
+                <h3 className = "text-center">We need you to update your account information to continue, please click the button below to add the information</h3>
+                    <br/>
+                    <div class="wrapper">
+                    <button className='btn' onClick={this.addAccountInfo}>Update account information</button>
+                    </div>
+                    <br/>
                 </div>  
             )}
         else{
@@ -47,10 +71,14 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
                 <div>
                 <br/>
                 <br/>
-                <h1>Your account information</h1>
-                    <ul className="list-group">
+                <h1 className = "text-center">Your account information</h1>
+                    <div>
                     {this.renderAccountInfo()}
-                    </ul>
+                        <div class="wrapper">
+                        <button className='btn' onClick={this.addAccountInfo}>Update account information</button>
+                        </div>
+                    </div>
+                    <br/>
                 </div>  
             )
         }

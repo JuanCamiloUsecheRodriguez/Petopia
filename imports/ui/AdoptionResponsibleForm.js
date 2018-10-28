@@ -18,6 +18,7 @@ class AdoptionResponsibleForm extends Component {
         // Aqui van los bind 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.back = this.back.bind(this);
     }
 
     // EventHandlers
@@ -27,7 +28,9 @@ class AdoptionResponsibleForm extends Component {
             [event.target.name]: value
         });
         }
-
+    back(){
+         window.location.assign("/profile")
+    };
     handleSubmit(event) {
         event.preventDefault();
         Meteor.users.update({_id: Meteor.userId()}, {$set: {
@@ -69,7 +72,7 @@ class AdoptionResponsibleForm extends Component {
             </div>
             <div className="form-group">
                 <label>Age</label>
-                <input className="form-control" type="number" name ="age" id="age" min="" max="" value={this.state.age} onChange={this.handleChange} />
+                <input className="form-control" type="number" name ="age" id="age" min="18" max="90" value={this.state.age} onChange={this.handleChange} />
             </div>
             <div className="form-group">
                 <label>Address</label>
@@ -87,7 +90,11 @@ class AdoptionResponsibleForm extends Component {
                 <label>E-mail</label>
                 <input className="form-control" type="text" name ="email" id="emailo" value={this.state.email} onChange={this.handleChange} />
             </div>
-            <button type="submit" className="btn btn-success">Submit</button>      
+            <div className="wrapper container">
+                <button className='btn btn btn-danger' onClick={this.back}>Back</button>
+                &emsp;&emsp;&emsp;
+                <button type="submit" className="btn btn-success">Submit</button> 
+            </div>     
         </form> 
                       
     </div>
