@@ -22,7 +22,7 @@ class Navbar extends Component {
                   
                     <a className="nav-item nav-link" href="/profile">Profile</a>
                     <a className="nav-item nav-link" href="/addPet">Add Pet for Adoption</a>
-                    <a className="nav-item nav-link" href="/verRecoleccionesTerminadas">Ver Recolecciones Terminadas</a>
+                    <a className="nav-item nav-link" href="/viewPets">View Pets</a>
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     <AccountsUIWrapper/> 
               </div>
@@ -32,7 +32,6 @@ class Navbar extends Component {
     }
     else{
       return(
-<<<<<<< HEAD
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top" >
             <a className="navbar-brand" href="/">
                <h1>Petopia</h1>
@@ -51,17 +50,6 @@ class Navbar extends Component {
              </div>
            </nav> 
       )    
-=======
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top" >
-      <h1 id= "petopia">Petopia</h1>
-      <a className="navbar-brand" href="#"> 
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  
-      <AccountsUIWrapper/>    
-      </a>
-      
-    </nav>)
-    }
->>>>>>> 32ae28ac03269d511af521e7921588110907d1a8
   }
 }
 
