@@ -19,7 +19,7 @@ import { Meteor } from 'meteor/meteor';
     };
     renderAccountInfo(){
         return(
-            <div className = "container" >
+            <div>
                 <br/>
                 <strong>Name : </strong><h3>{this.props.user.profile.name}</h3>
                 <hr/>
@@ -61,21 +61,21 @@ import { Meteor } from 'meteor/meteor';
                 <h3 className = "text-center">We need you to update your account information to continue, please click the button below to add the information</h3>
                     <br/>
                     <div class="wrapper">
-                    <button className='btn' onClick={this.addAccountInfo}>Update account information</button>
+                    <button className='btn btn-success' onClick={this.addAccountInfo}>Update account information</button>
                     </div>
                     <br/>
                 </div>  
             )}
         else{
             return (
-                <div>
+                <div className="container">
                 <br/>
                 <br/>
                 <h1 className = "text-center">Your account information</h1>
                     <div>
                     {this.renderAccountInfo()}
                         <div class="wrapper">
-                        <button className='btn' onClick={this.addAccountInfo}>Update account information</button>
+                        <button className='btn btn-success' onClick={this.addAccountInfo}>Update account information</button>
                         </div>
                     </div>
                     <br/>
