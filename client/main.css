@@ -1,9 +1,23 @@
 body {
-  padding-top: 100px;
+  margin-top: 50px;
   font-family: sans-serif;
   font-family: 'Open Sans', sans-serif;
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/circles-dark.png");
+  background-repeat: repeat;
 }
 
+.container{
+  background-color:white;
+  margin-top: 80px;
+  padding: 30px; 
+  margin-bottom: 50px;
+
+}
+
+
+.black{
+  background-color: black !important;
+}
 strong{
   font-weight: bold;
 }
@@ -19,11 +33,12 @@ h3 {
 .pet-background{
   background-color: black !important;
   color: aliceblue;
-  padding-bottom:0 !important; 
+  padding-bottom: 0 !important; 
+  margin-bottom: 0 !important; 
 }
 
 .background-img{
-  height:45em;
+  height:40em;
   text-align: left;
   margin-left: 480px;
   
@@ -84,7 +99,6 @@ h3 {
 .buy-button {
   padding: 0.75rem 1.5rem;
   font-size: 0.75rem;
-  text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: #ecf0f1;
@@ -92,10 +106,12 @@ h3 {
   border-radius: 0.25rem;
   transition: 0.25s;
   margin: 0 auto;
+  outline:none;
 }
 
 .buy-button:hover {
-  text-decoration: none;
+  outline:none;
+  
   background-color:#069478 ;
   color: #ecf0f1;
   margin: 0 auto;
@@ -127,4 +143,8 @@ h3 {
 
 .wrapper {
   text-align: center;
+}
+
+.petpic{
+  width: 50%;
 }

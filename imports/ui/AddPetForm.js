@@ -31,7 +31,7 @@ class AddPetForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleImageChange = this.handleImageChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-}
+  }
 
     // EventHandlers
 
@@ -115,7 +115,7 @@ class AddPetForm extends Component {
               </Row>
               <Row>
                   <Col>
-                    {(image) ? <img src={this.state.image} className="img-fluid center-img" alt="petimage"/> :<img src='https://www.southernmallee.sa.gov.au/webdata/resources/images/Cat_and_Dog.jpg' className="img-fluid center-img" alt="cat dog placeholder"/>}
+                    {(image) ? <img src={this.state.image} className="img-fluid center-img" alt="petimage"/> :<img src='https://www.condorferries.co.uk/media/2455/taking-your-pet-5.jpg' className="img-fluid center-img" alt="cat dog placeholder"/>}
                     <form className='form-style-8' onSubmit={this.handleSubmit}>
                       
                       <div className="form-group">

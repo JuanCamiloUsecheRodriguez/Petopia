@@ -12,6 +12,7 @@ import ViewPets from '../imports/ui/ViewPets.js';
 import PetDetails from '../imports/ui/PetDetails.js';
 import TodoList from '../imports/ui/TodoList.js';
 
+
 Meteor.startup(() => {
   render(
     <Router>
