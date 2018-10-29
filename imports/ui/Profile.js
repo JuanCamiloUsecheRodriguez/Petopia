@@ -21,23 +21,23 @@ import { Meteor } from 'meteor/meteor';
         return(
             <div className = "container" >
                 <br/>
-                <strong>Name : </strong><h3>{this.props.user.profile.name}</h3>
+                <strong>Name : </strong><p>{this.props.user.profile.name}</p>
                 <hr/>
-                <strong>ID : </strong><h3>{this.props.user.profile.id}</h3>
+                <strong>ID : </strong><p>{this.props.user.profile.id}</p>
                 <hr/>
-                <strong>Age : </strong><h3>{this.props.user.profile.age}</h3>
+                <strong>Age : </strong><p>{this.props.user.profile.age}</p>
                 <hr/>
                 🏠
-                <strong>Address: </strong><h3>{this.props.user.profile.address}</h3>
+                <strong>Address: </strong><p>{this.props.user.profile.address}</p>
                 <hr/>
                 🏢
-                 <strong>City: </strong><h3>{this.props.user.profile.city}</h3>
+                 <strong>City: </strong><p>{this.props.user.profile.city}</p>
                 <hr/>
                 📞
-                <strong>Telephone Number : </strong><h3>{this.props.user.profile.telephoneNumber}</h3>
+                <strong>Telephone Number : </strong><p>{this.props.user.profile.telephoneNumber}</p>
                 <hr/>
                 📧
-                <strong>Email : </strong><h3>{this.props.user.profile.email}</h3>
+                <strong>Email : </strong><p>{this.props.user.profile.email}</p>
                 <hr/>
                 <br/>
             </div>
