@@ -71,11 +71,12 @@ export default class TodoList extends Component {
 
     renderRequirements(){
         return(
-            <div className = "container">
+            <div >
                 <br/>
+                    
                     <div className = "row">
                         <div className ="col-md-8"> 
-                            <input type="checkbox" id="vaccinations" onChange={this.recalculate}/>&emsp;&emsp;Vaccinatios
+                       <input type="checkbox" id="vaccinations" onChange={this.recalculate}/>&emsp;&emsp;<label for="Vaccinatios">Vaccinatios</label>
                         </div>
                         <div className ="col-md-4"> 
                             Pricing: 115.000 COP
@@ -196,7 +197,7 @@ export default class TodoList extends Component {
     }
       render() {
         return (
-          <div>
+          <div className = "container">
             <h1 className='text-center'>Adoption Calculator</h1>
             {this.renderRequirements()}
             <div className="wrapper">

@@ -22,7 +22,7 @@ export default class PetCard extends Component {
         return (
           
           <div className='product-card text-center'>
-          <img src={image}/>
+          <img src={image} alt={name}/>
           <div className='card-margin'>
             <div className='product-card-name'>
           {name}
