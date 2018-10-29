@@ -19,33 +19,31 @@ import {Pet} from '../api/pet.js';
         return this.props.pets.map((r,i)=>{
         return(
             <div className = "container" >
-                <h3>I am a {r.species}.</h3>
-                <br/>
-                <h3>Hi! my name is {r.name} and I am {r.ageYears} years old and {r.ageMonths} months old.</h3>
-                <br/>
-                <h3>My gender is {r.gender} and my breed is {r.breed} 
-                . I have a {r.petsonality} petsonality. I really love {r.likes}, I dislike {r.dislikes}.</h3>
-                <br/>
-                <h3>Here is my story:</h3>
-                <br/>
-                <h3>{r.story}</h3>
+
+                <p>I am a {r.species}.</p>
+                <p>Hi! my name is {r.name} and I am {r.ageYears} years old and {r.ageMonths} months old.</p>
+                <p>My gender is {r.gender} and my breed is {r.breed}. I have a {r.petsonality} petsonality. I really love {r.likes}, I dislike {r.dislikes}.</p>
+                
+                <p>Here is my story:</p>
+                
+                <p>{r.story}</p>
                 <hr/>
                 <h2  className = "text-center">Other Details</h2>
-                <h3>sterilized: {r.sterilized? "yes":"no"}</h3>
-                <h3>post publish date: {r.publishDate}</h3>
+                <p><strong>Sterilized:</strong> {r.sterilized? "yes":"no"}</p>
+                <p><strong>Publish date:</strong>{r.publishDate}</p>
                 <hr/>
                 <br/>
                 <h2 className = "text-center">Responsible Contact Information</h2>
                 <br/>
-                <strong>Name : </strong><h3>{r.rName}</h3>
+                <strong>Name : </strong><p>{r.rName}</p>
                 <hr/>
-                 <strong>City: </strong><h3>{r.rCity}</h3>
+                 <strong>City: </strong><p>{r.rCity}</p>
                 <hr/>
                 📞
-                <strong>Telephone Number : </strong><h3>{r.rTelephoneNumber}</h3>
+                <strong>Telephone Number : </strong><p>{r.rTelephoneNumber}</p>
                 <hr/>
                 📧
-                <strong>Email : </strong><h3>{r.rEmail}</h3>
+                <strong>Email : </strong><p>{r.rEmail}</p>
                 <hr/>
                 <br/>
             </div>
