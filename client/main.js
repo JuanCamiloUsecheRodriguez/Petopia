@@ -8,7 +8,7 @@ import AddPetform from '../imports/ui/AddPetForm.js';
 import Profile from '../imports/ui/Profile.js'
 import AdoptionResponsibleForm from '../imports/ui/AdoptionResponsibleForm.js'
 import './main.html';
-import ViewPets from '../imports/ui/ViewPets.js';
+import ViewPets from '../imports/ui/viewPets.js';
 import PetDetails from '../imports/ui/PetDetails.js';
 import TodoList from '../imports/ui/TodoList.js';
 
