@@ -51,7 +51,8 @@ class AdoptionResponsibleForm extends Component {
             telephoneNumber: '',
             email: ''
         });
-        window.location.reload();
+        window.alert("Your profile information has been updated");
+        window.location.assign("/profile");
         }
 
 

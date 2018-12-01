@@ -150,6 +150,13 @@ h3 {
   color: white;
 }
 
+#petopia { 
+  color: white;
+}
+#formAddPet textarea{
+  background-color:#eaeaea;
+}
+
 .wrapper {
   text-align: center;
 }

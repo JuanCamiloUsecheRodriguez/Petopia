@@ -31,6 +31,8 @@ class AddPetForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleImageChange = this.handleImageChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    /** 
+    */
   }
 
     // EventHandlers
@@ -40,6 +42,13 @@ class AddPetForm extends Component {
       this.setState({
         [event.target.name]: value
       });
+
+
+      if(typeof this.props.user.profile === "undefined")
+      {
+        window.alert("You need to update your profile information first");
+        window.location.assign("/profile");
+      }
     }
 
     handleImageChange(event){
@@ -93,20 +102,19 @@ class AddPetForm extends Component {
         story: '',
         image: null
       });
+      window.alert("The pet was set to adoption");
+      window.location.assign("/ViewPets");
     }
     catch(err){
       window.alert("You need to update your profile information first, please head to your profile through the navigation bar")
     }
       
   }
-
-
-
   render() {
 
     const {name, ageYears, ageMonths, petsonality, gender, breed, sterilized, likes, dislikes, story, image} = this.state
     return (
-      <div>
+      <div id = "formAddPet">
           <Container>
               <Row>
                
