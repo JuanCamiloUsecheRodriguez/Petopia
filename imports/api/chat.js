@@ -14,6 +14,9 @@ if (Meteor.isServer) {
 
 Meteor.methods({
     'chat.add':function(pChat){
+        if (!this.userId) {
+            throw new Meteor.Error('not-authorized');
+           }
         Chats.insert(pChat);
     }
 });
