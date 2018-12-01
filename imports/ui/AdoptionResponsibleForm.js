@@ -65,31 +65,31 @@ class AdoptionResponsibleForm extends Component {
             <h1>Adoption Responsible Form</h1>
             <div className="form-group">
                 <label>Name</label>
-                <input className="form-control" type="text" name ="name" id="name"  value={this.state.name} onChange={this.handleChange}/>
+                <input className="form-control" type="text" name ="name" id="name"  value={this.state.name} onChange={this.handleChange} required/>
             </div>
             <div className="form-group">
                 <label>ID</label>
-                <input className="form-control" type="text" name ="id" id="id" value={this.state.id} onChange={this.handleChange}/>
+                <input className="form-control" type="number" name ="id" id="id" value={this.state.id} onChange={this.handleChange}  required/>
             </div>
             <div className="form-group">
                 <label>Age</label>
-                <input className="form-control" type="number" name ="age" id="age" min="18" max="90" value={this.state.age} onChange={this.handleChange} />
+                <input className="form-control" type="number" name ="age" id="age" min="18" max="90" value={this.state.age} onChange={this.handleChange}  required/>
             </div>
             <div className="form-group">
                 <label>Address</label>
-                <input className="form-control" type="text" name ="address" id="address" value={this.state.address} onChange={this.handleChange} />
+                <input className="form-control" type="text" name ="address" id="address" value={this.state.address} onChange={this.handleChange}  required/>
             </div>
             <div className="form-group">
                 <label>City</label>
-                <input className="form-control" type="text" name ="city" id="city" value={this.state.city} onChange={this.handleChange} />
+                <input className="form-control" type="text" name ="city" id="city" value={this.state.city} onChange={this.handleChange}  required />
             </div>
             <div className="form-group">
                 <label>Telephone Number</label>
-                <input className="form-control" type="text" name ="telephoneNumber" id="telephoneNumber" value={this.state.telephoneNumber} onChange={this.handleChange} />
+                <input className="form-control" type="number" name ="telephoneNumber" id="telephoneNumber" value={this.state.telephoneNumber} onChange={this.handleChange} required />
             </div>
             <div className="form-group">
                 <label>E-mail</label>
-                <input className="form-control" type="text" name ="email" id="emailo" value={this.state.email} onChange={this.handleChange} />
+                <input className="form-control" type="text" name ="email" id="emailo" value={this.state.email} onChange={this.handleChange} required/>
             </div>
             <div className="wrapper container">
                 <button className='btn btn btn-danger' onClick={this.back}>Back</button>
