@@ -3,6 +3,7 @@ import  PetCard  from './PetCard.js';
 import {withTracker} from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
+import InfiniteScroll from 'react-infinite-scroller';
 
 
 import {Pet} from '../api/pet.js';
@@ -31,11 +32,11 @@ class ViewPets extends Component {
 
 
     renderPets(){
-        return this.props.pets.map((r,i)=>{
+        let pets =[]
+        this.props.pets.map((r,i)=>{
             if (r.species == 'Cat' && this.state.cats){
                 let desc = 'Im a very '+r.petsonality+' '+r.species+' who loves '+r.likes+'. I dislike '+r.dislikes+', I am '+r.ageYears+' years and '+r.ageMonths+' months old.' ;
-
-                return(
+                pets.push(
                     <div class="col-sm">
                     <PetCard
                     key={i}
@@ -46,13 +47,12 @@ class ViewPets extends Component {
                     responsibleId={r.responsibleId}
                     />
                     </div>
-                    
-                );
+                ); 
                 
             }else if(r.species == 'Dog' && this.state.dogs){
                 let desc = 'Im a very '+r.petsonality+' '+r.species+' who loves '+r.likes+'. I dislike '+r.dislikes+', I am '+r.ageYears+' years and '+r.ageMonths+' months old.' ;
 
-                return(
+                pets.push(
                     <div class="col-sm">
                     <PetCard
                     key={i}
@@ -70,13 +70,15 @@ class ViewPets extends Component {
             }
             
             
-        })
+        });
+        return pets;
     };
 
 
 
   render() {
     return (
+       
 
     <div class="container">
             <div class="form-check">
@@ -91,7 +93,17 @@ class ViewPets extends Component {
             </div>
             
         <div class="row">
-            {this.renderPets()}
+            <InfiniteScroll
+                pageStart={0}
+                
+                hasMore={true || false}
+                loader={<div className="loader" key={0}>Loading ...</div>}
+            >
+                {this.renderPets()} 
+            </InfiniteScroll>
+
+
+            
         </div>
     </div>
       
