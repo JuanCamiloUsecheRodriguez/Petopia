@@ -13,7 +13,7 @@ class ViewPets extends Component {
         super(props);
     
         this.state={
-            dogs : true,
+            dogs : false,
             cats : false
         };
         this.handleChange = this.handleChange.bind(this);
@@ -56,7 +56,7 @@ class ViewPets extends Component {
                     <div class="col-sm">
                     <PetCard
                     key={i}
-                    image='https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+                    image='https://images.pexels.com/photos/159541/wildlife-photography-pet-photography-dog-animal-159541.jpeg?cs=srgb&dl=adorable-animal-breed-159541.jpg&fm=jpg'
                     name={ r.name}
                     description =  {desc}
                     idPet={r._id}
