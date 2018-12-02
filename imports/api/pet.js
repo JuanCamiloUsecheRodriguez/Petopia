@@ -14,6 +14,9 @@ if (Meteor.isServer) {
 
 Meteor.methods({
     'pet.add':function(pPet){
+        if (!this.userId) {
+            throw new Meteor.Error('not-authorized');
+          }
         Pet.insert(pPet);
     }
 });

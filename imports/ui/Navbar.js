@@ -10,7 +10,7 @@ class Navbar extends Component {
   render() {
     if(this.props.user){
         return(
-            <nav className="navbar navbar-expand-lg fixed-top black" >
+          <nav className="navbar black fixed-top navbar-expand-sm" >
               <a className="navbar-brand" href="/">
               <strong>Petopia</strong>
               </a>

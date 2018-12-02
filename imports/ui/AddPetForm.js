@@ -138,25 +138,25 @@ class AddPetForm extends Component {
                       <br/> 
                     
                       Hi!, my name is 
-                      <input type='text' placeholder='Lupe' name='name' value={name} onChange={this.handleChange}/> 
+                      <input type='text' placeholder='Lupe' name='name' value={name} onChange={this.handleChange} required/> 
                       and I am 
-                      <input type='number' placeholder='7' min='0' name='ageYears' value={ageYears} onChange={this.handleChange}/> 
+                      <input type='number' placeholder='7' min='0' name='ageYears' value={ageYears} onChange={this.handleChange} required/> 
                       years old and 
-                      <input type='number' placeholder='5' min='0' name='ageMonths' value={ageMonths} onChange={this.handleChange}/>months old.<br/>
+                      <input type='number' placeholder='5' min='0' name='ageMonths' value={ageMonths} onChange={this.handleChange} required/>months old.<br/>
                       My gender is 
-                      <select name='gender' onChange={this.handleChange}>
+                      <select name='gender' onChange={this.handleChange} >
                         <option value='Female'>Female</option>
                         <option value ='Male'>Male</option>
                       </select> and my breed is 
-                      <input type='text' placeholder='unique' name='breed' value={breed} onChange={this.handleChange}/>. 
+                      <input type='text' placeholder='unique' name='breed' value={breed} onChange={this.handleChange} required/>. 
                       I have a 
-                      <input type='text' placeholder='calm' name='petsonality' value={petsonality} onChange={this.handleChange}/> petsonality. I really love 
-                      <input type='text' placeholder='sleeping' name='likes' value={likes} onChange={this.handleChange}/>, I dislike 
-                      <input type='text' placeholder='loud noises' name='dislikes' value={dislikes} onChange={this.handleChange}/>.
+                      <input type='text' placeholder='calm' name='petsonality' value={petsonality} onChange={this.handleChange}  required/> petsonality. I really love 
+                      <input type='text' placeholder='sleeping' name='likes' value={likes} onChange={this.handleChange}  required/>, I dislike 
+                      <input type='text' placeholder='loud noises' name='dislikes' value={dislikes} onChange={this.handleChange}  required/>.
                       <br/>
                       <div className="form-group purple-border">
                         <label htmlFor="Story">Here is my story</label>
-                        <textarea className="form-control" id="exampleFormControlTextarea4" rows="3" name='story' value={story} onChange={this.handleChange}></textarea>
+                        <textarea className="form-control" id="exampleFormControlTextarea4" rows="3" name='story' value={story} onChange={this.handleChange}  required></textarea>
                       </div>
 
                       Sterilized? 
