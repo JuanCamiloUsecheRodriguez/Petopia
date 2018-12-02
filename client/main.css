@@ -160,35 +160,20 @@ h3 {
 }
 
 .wrapper {
-  text-align: center;
 }
 
 .petpic{
   width: 50%;
 }
 
-/*uoload image*/
-#dropbox { 
-  border: 4px dashed #ccc; 
-  padding-left: 8px;
+#page-numbers {
+  list-style: none;
+  display: flex;
 }
-.my-form {
-  margin-top: 10px;
-}
-.gallery {
-  margin: 10px;
-}
-.gallery img {
-  margin-left: 16px;
-}
-.progress-bar{
-  width: 200px;
-  position: relative;
-  height: 8px;
-  margin-top: 4px;
-}
-.progress-bar .progress{
-  height: 8px;
-  background-color: #ff0000;
-  width: 0;
+
+#page-numbers > li {
+  margin-right: 0.3em;
+  color: blue;
+  user-select: none;
+  cursor: pointer;
 }
