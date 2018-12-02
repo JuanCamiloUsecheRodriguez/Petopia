@@ -15,9 +15,19 @@ class ViewPets extends Component {
     
         this.state={
             dogs : false,
-            cats : false
+            cats : false,
+            currentPage: 1,
+            petPerPage: 9,
+            currentPets:[]
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(event) {
+        this.setState({
+          currentPage: Number(event.target.id)
+        });
     }
 
     handleChange(event) {
@@ -31,10 +41,11 @@ class ViewPets extends Component {
     }
 
 
-    renderPets(){
+    renderPets(currentpets){
         let pets =[]
-        this.props.pets.map((r,i)=>{
         if(r.rCity.includes(this.props.user.profile.city)){
+        currentpets.map((r,i)=>{
+
             if (r.species == 'Cat' && this.state.cats){
                 let desc = 'Im a very '+r.petsonality+' '+r.species+' who loves '+r.likes+'. I dislike '+r.dislikes+', I am '+r.ageYears+' years and '+r.ageMonths+' months old.' ;
                 pets.push(
@@ -50,7 +61,9 @@ class ViewPets extends Component {
                     </div>
                 ); 
                 
-            }else if(r.species == 'Dog' && this.state.dogs){
+            }
+            
+            if(r.species == 'Dog' && this.state.dogs){
                 let desc = 'Im a very '+r.petsonality+' '+r.species+' who loves '+r.likes+'. I dislike '+r.dislikes+', I am '+r.ageYears+' years and '+r.ageMonths+' months old.' ;
 
                 pets.push(
@@ -70,16 +83,48 @@ class ViewPets extends Component {
 
             }
             
-        }
+            
         });
         return pets;
-    };
-    loadItems(page) {
-       
     }
+    };
+
+
+
 
 
   render() {
+    const pets = this.props.pets;
+    const currentPage = this.state.currentPage;
+    const petsPerPage = this.state.petPerPage;
+
+    const indexLast = currentPage * petsPerPage;
+    const indexFirst = indexLast-petsPerPage;
+    const current = this.props.pets.slice(indexFirst,indexLast);
+
+    const pageNumbers = [];
+
+    
+
+
+
+    for (let i = 1; i <= Math.ceil(this.props.pets.length / petsPerPage); i++) {
+        pageNumbers.push(i);
+    }
+
+    const renderPageNumbers = pageNumbers.map(number => {
+        return (
+          <li
+            key={number}
+            id={number}
+            onClick={this.handleClick}
+          >
+            {number}
+          </li>
+        );
+      });
+
+
     return (
        
 
@@ -98,7 +143,11 @@ class ViewPets extends Component {
         <div class="row">
         
 
-         {this.renderPets()} 
+         {this.renderPets(current)}
+         
+         <ul id="page-numbers">
+              {renderPageNumbers}
+         </ul> 
             
         </div>
     </div>
@@ -109,7 +158,7 @@ class ViewPets extends Component {
 
 ViewPets.propTypes ={
     pets: PropTypes.array.isRequired,
-    user: PropTypes.object
+    user: PropTypes.object  
 }
 
 export default withTracker(()=>{
