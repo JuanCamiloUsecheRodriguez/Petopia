@@ -34,7 +34,7 @@ class ViewPets extends Component {
         return this.props.pets.map((r,i)=>{
             if (r.species == 'Cat' && this.state.cats){
                 let desc = 'Im a very '+r.petsonality+' '+r.species+' who loves '+r.likes+'. I dislike '+r.dislikes+', I am '+r.ageYears+' years and '+r.ageMonths+' months old.' ;
-
+                if(r.rCity.includes(this.props.user.profile.city)){
                 return(
                     <div class="col-sm">
                     <PetCard
@@ -47,11 +47,11 @@ class ViewPets extends Component {
                     />
                     </div>
                     
-                );
+                );}
                 
             }else if(r.species == 'Dog' && this.state.dogs){
                 let desc = 'Im a very '+r.petsonality+' '+r.species+' who loves '+r.likes+'. I dislike '+r.dislikes+', I am '+r.ageYears+' years and '+r.ageMonths+' months old.' ;
-
+                if(r.rCity.includes(this.props.user.profile.city)){
                 return(
                     <div class="col-sm">
                     <PetCard
@@ -64,7 +64,7 @@ class ViewPets extends Component {
                     />
                     </div>
                     
-                );
+                );}
                 
 
             }
@@ -100,12 +100,14 @@ class ViewPets extends Component {
 }
 
 ViewPets.propTypes ={
-    pets: PropTypes.array.isRequired
+    pets: PropTypes.array.isRequired,
+    user: PropTypes.object
 }
 
 export default withTracker(()=>{
     Meteor.subscribe('pets');
     return{
         pets: Pet.find({}).fetch(),
+        user: Meteor.user()
     };
 })(ViewPets);
