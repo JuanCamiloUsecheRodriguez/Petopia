@@ -16,7 +16,7 @@ export default class LandingPage extends Component {
             <p className="lead">Looking for a pet to <strong>adopt</strong>? We will help you find the perfect match for your home and family.</p>
         
             <hr/>
-            <p>Join our community now and change a life! </p> <Button>Sign up</Button>
+            <p>Join our community now and change a life! </p>
           </Container>
           <img className="background-img" src="https://bit.ly/2qe5yuw" alt="dalmatian"/>
           
