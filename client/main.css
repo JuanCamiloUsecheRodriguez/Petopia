@@ -52,7 +52,9 @@ h3 {
   margin-left: 480px;
   
 }
-
+.navbar-toggler {
+  border-color: rgb(255, 255, 255);
+} 
 .form-style-8 input[type="text"],
 .form-style-8 input[type="date"],
 .form-style-8 input[type="datetime"],
