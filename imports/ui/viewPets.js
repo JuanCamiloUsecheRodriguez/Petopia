@@ -43,9 +43,9 @@ class ViewPets extends Component {
 
     renderPets(currentpets){
         let pets =[]
-        if(r.rCity.includes(this.props.user.profile.city)){
+        
         currentpets.map((r,i)=>{
-
+            if(r.rCity.includes(this.props.user.profile.city)){
             if (r.species == 'Cat' && this.state.cats){
                 let desc = 'Im a very '+r.petsonality+' '+r.species+' who loves '+r.likes+'. I dislike '+r.dislikes+', I am '+r.ageYears+' years and '+r.ageMonths+' months old.' ;
                 pets.push(
@@ -80,13 +80,10 @@ class ViewPets extends Component {
                     
                 );
                 
-
-            }
-            
-            
-        });
+                        }
+                    }
+                });
         return pets;
-    }
     };
 
 
@@ -144,12 +141,14 @@ class ViewPets extends Component {
         
 
          {this.renderPets(current)}
-         
-         <ul id="page-numbers">
-              {renderPageNumbers}
-         </ul> 
+
             
         </div>
+        <div class="row">
+        <ul id="page-numbers">
+              {renderPageNumbers}
+         </ul> 
+          </div>
     </div>
       
     )
