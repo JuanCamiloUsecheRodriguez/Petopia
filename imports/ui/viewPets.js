@@ -34,6 +34,7 @@ class ViewPets extends Component {
     renderPets(){
         let pets =[]
         this.props.pets.map((r,i)=>{
+
             if (r.species == 'Cat' && this.state.cats){
                 let desc = 'Im a very '+r.petsonality+' '+r.species+' who loves '+r.likes+'. I dislike '+r.dislikes+', I am '+r.ageYears+' years and '+r.ageMonths+' months old.' ;
                 pets.push(
@@ -73,7 +74,9 @@ class ViewPets extends Component {
         });
         return pets;
     };
-
+    loadItems(page) {
+       
+    }
 
 
   render() {
@@ -93,16 +96,9 @@ class ViewPets extends Component {
             </div>
             
         <div class="row">
-            <InfiniteScroll
-                pageStart={0}
-                
-                hasMore={true || false}
-                loader={<div className="loader" key={0}>Loading ...</div>}
-            >
-                {this.renderPets()} 
-            </InfiniteScroll>
+        
 
-
+         {this.renderPets()} 
             
         </div>
     </div>
