@@ -55,7 +55,6 @@ class AdoptionResponsibleForm extends Component {
         window.location.assign("/profile");
         }
 
-
   render() {
     return (
         <div className="container">
