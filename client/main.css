@@ -53,6 +53,7 @@ h3 {
   
 }
 .navbar-toggler {
+  background-color: rgb(66, 66, 66) ;
   border-color: rgb(255, 255, 255);
 } 
 .form-style-8 input[type="text"],

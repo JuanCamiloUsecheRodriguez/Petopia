@@ -101,10 +101,6 @@ class ViewPets extends Component {
 
     const pageNumbers = [];
 
-    
-
-
-
     for (let i = 1; i <= Math.ceil(this.props.pets.length / petsPerPage); i++) {
         pageNumbers.push(i);
     }

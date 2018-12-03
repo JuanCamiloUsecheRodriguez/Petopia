@@ -80,7 +80,7 @@ class AdoptionResponsibleForm extends Component {
             </div>
             <div className="form-group">
                 <label>City</label>
-                <input className="form-control" type="text" name ="city" id="city" value={this.state.city} onChange={this.handleChange}  required />
+                <input placeholder='Bogotá' className="form-control" type="text" name ="city" id="city" value={this.state.city} onChange={this.handleChange}  required />
             </div>
             <div className="form-group">
                 <label>Telephone Number</label>
