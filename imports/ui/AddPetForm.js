@@ -3,6 +3,8 @@ import {Container, Row, Col, Button} from 'reactstrap';
 import { Meteor } from 'meteor/meteor';
 import {withTracker} from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import request from 'superagent';
+
 
 import {Pet} from '../api/pet.js';
 
@@ -24,7 +26,8 @@ class AddPetForm extends Component {
         dislikes: '',
         story: '',
         image: null,
-        species:'Cat'
+        species:'Cat',
+        imageUrl:''
     };
 
     //bind
@@ -59,52 +62,42 @@ class AddPetForm extends Component {
 
       console.log(event.target.files[0]);
       
-      const cloudName = 'petopia';
+      //const cloudName = 'petopia';
       const unsignedUploadPreset = 'petopiaupload';
-      let file = this.state.image;
+      let file = event.target.files[0];
 
       
       var url = 'https://api.cloudinary.com/v1_1/petopia/upload';
-      var xhr = new XMLHttpRequest();
-      var fd = new FormData();
-      xhr.open('POST', url, true);
-      xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-
-      // Reset the upload progress bar
-      document.getElementById('progress').style.width = 0;
       
-      // Update progress (can be used to show progress indicator)
-      xhr.upload.addEventListener("progress", function(e) {
-        var progress = Math.round((e.loaded * 100.0) / e.total);
-        document.getElementById('progress').style.width = progress + "%";
-
-        console.log(`fileuploadprogress data.loaded: ${e.loaded},
-      data.total: ${e.total}`);
+      const public_id = Date.now();
+      const fileName = file.name;
+      request.post(url)
+      .field('upload_preset', 'petopiaupload')
+      .field('file', file)
+      .field('public_id', public_id)
+      .on('progress', (progress) => this.onPhotoUploadProgress(progress))
+      .end((error, response) => {
+        this.onPhotoUploaded(fileName, response);
       });
 
-      xhr.onreadystatechange = function(e) {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          // File uploaded successfully
-          var response = JSON.parse(xhr.responseText);
-          // https://res.cloudinary.com/cloudName/image/upload/v1483481128/public_id.jpg
-          var url = response.secure_url;
-          // Create a thumbnail of the uploaded image, with 150px width
-          var tokens = url.split('/');
-          tokens.splice(-2, 0, 'w_150,c_scale');
-          var img = new Image(); // HTML5 Constructor
-          img.src = tokens.join('/');
-          img.alt = response.public_id;
-          document.getElementById('gallery').appendChild(img);
-        }
-      };
-
-      fd.append('upload_preset', unsignedUploadPreset);
-      fd.append('tags', 'browser_upload'); // Optional - add tag for image admin in Cloudinary
-      fd.append('file', file);
-      console.log(fd);
       
-      xhr.send(fd);
     }
+
+    onPhotoUploadProgress( progress) {
+      console.log(progress.percent);
+    }
+
+    onPhotoUploaded(fileName, response) {
+      
+      
+      let newelement= response.body.url
+      console.log(response.body.url)
+
+      this.setState({
+        imageUrl: newelement
+      })
+    }
+    
 
     handleSubmit(event) {
       event.preventDefault();
@@ -121,7 +114,7 @@ class AddPetForm extends Component {
         dislikes: this.state.dislikes,
         publishDate: Date(Date.now()),
         story: this.state.story,
-        image: 'not an image in mongo',
+        image: this.state.imageUrl,
         species: this.state.species,
         inAdoption :true,
         rId: this.props.user._id,
@@ -169,39 +162,13 @@ class AddPetForm extends Component {
                 <Col><h1 className='text-center'>Let's meet a new friend!</h1></Col>
                 
               </Row>
-
-              <Row>
-              <div id="dropbox">
-                  <h1>Upload files with to Cloudinary with HTML5 file upload</h1> Learn more in this blog post - <a href="https://cloudinary.com/blog/direct_upload_made_easy_from_browser_or_mobile_app_to_the_cloud">Direct upload made easy, from browser or mobile app to the cloud</a>
-
-                  <form className="my-form">
-                    <div className="form_line">
-                      <h4>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</h4>
-                      <div className="form_controls">
-                        <div className="upload_button_holder">
-                          <input type="file" className="form-control-file" id="petPhoto" name='image' onChange={this.handleImageChange}/>
-                          <a href="#" id="fileSelect">Select some files</a>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-
-                  <div className="progress-bar" id="progress-bar">
-                    <div className="progress" id="progress"></div>
-                  </div>
-              </div>
-
-                  <div id="gallery">
-                  </div>
- 
-              </Row>
               <Row>
                   <Col>
                     {(image) ? <img src={this.state.image} className="img-fluid center-img" alt="petimage"/> :<img src='https://www.condorferries.co.uk/media/2455/taking-your-pet-5.jpg' className="img-fluid center-img" alt="cat dog placeholder"/>}
                     <form className='form-style-8' onSubmit={this.handleSubmit}>
                       
                       <div className="form-group">
-                        <label htmlFor="SubmitPhoto">Choose a nice picture!</label>
+                        <label htmlFor="SubmitPhoto"></label>
                         <input type="file" className="form-control-file" id="petPhoto" name='image' onChange={this.handleImageChange}/>
                       </div>
 

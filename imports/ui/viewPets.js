@@ -57,7 +57,7 @@ class ViewPets extends Component {
                     <div class="col-sm">
                     <PetCard
                     key={i}
-                    image='https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+                    image={r.image}
                     name={ r.name}
                     description =  {desc}
                     idPet={r._id}

@@ -23,7 +23,7 @@ import {Pet} from '../api/pet.js';
         return(
             <div >
                 
-                <img src='https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' alt='cat' className='petpic center-img'/>
+                <img src= {r.image} alt='cat' className='petpic center-img'/>
                 <p>I am a {r.species}.</p>
                 <p>Hi! my name is {r.name} and I am {r.ageYears} years and {r.ageMonths} months old.</p>
                 <p>My gender is {r.gender} and my breed is {r.breed}. I have a {r.petsonality} petsonality. I really love {r.likes}, I dislike {r.dislikes}.</p>
