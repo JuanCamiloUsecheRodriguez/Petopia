@@ -4,11 +4,11 @@ export const Pet = new Mongo.Collection('pets');
 
 if (Meteor.isServer) {
     Meteor.publish('pets', () => {
-      return Pet.find({});
+      return Pet.find({inAdoption:true});
     });
 
     Meteor.publish('petByID', function (pId) {
-        return Pet.find({});
+        return Pet.find();
     })  
 }
 

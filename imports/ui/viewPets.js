@@ -20,7 +20,8 @@ class ViewPets extends Component {
             petPerPage: 9,
             currentPets:[],
             arrCats: [],
-            arrDogs:[]
+            arrDogs:[],
+            arrPets:[]
 
 
         };
@@ -78,22 +79,28 @@ class ViewPets extends Component {
 
         const cats = [];
         const dogs =[];
+        let pets = [];
 
 
         this.props.pets.map((r,i)=>{
-            if(r.species == 'Cat'){
-                cats.push(r);
-            }else{
-                dogs.push(r);
-            }
+           
             
+            if(r.rCity.includes(this.props.user.profile.city)){
+                if(r.species == 'Cat' ){
+                    cats.push(r);
+                }else if (r.species == 'Dog' ){
+                    dogs.push(r);
+                }
+
+            }
         });
 
-        
+        pets =  cats.concat(dogs);
 
         this.setState({
             arrCats: cats,
-            arrDogs: dogs
+            arrDogs: dogs,
+            arrPets: pets
         });
 
     }
@@ -115,8 +122,6 @@ class ViewPets extends Component {
 
         for (let i = 1; i <= Math.ceil(petsArray.length / petsPerPage); i++) {
             pageNumbers.push(i);
-           
-            
         }
         let pages =[];
 
@@ -153,8 +158,8 @@ class ViewPets extends Component {
 
     arrayselect(){
         if (this.state.dogs && this.state.cats){
-            console.log('d');
-            return this.paginate(this.props.pets);
+            
+            return this.paginate(this.state.arrPets);
         }else if(this.state.dogs){
             return this.paginate(this.state.arrDogs);
         }else if(this.state.cats){
@@ -171,8 +176,8 @@ class ViewPets extends Component {
         const indexFirst = indexLast-petsPerPage;
         let current = [];
         if (this.state.dogs && this.state.cats){
-            console.log('d');
-            current = this.props.pets.slice(indexFirst,indexLast);
+           
+            current = this.state.arrPets.slice(indexFirst,indexLast);
             
         }else if(this.state.dogs){
             current = this.state.arrDogs.slice(indexFirst,indexLast);
