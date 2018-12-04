@@ -13,6 +13,7 @@ import {Pet} from '../api/pet.js';
 
         this.state={
             pet: 0
+
         }
         this.state.pet = localStorage.getItem('idPet');
         this.renderPetInfo= this.renderPetInfo.bind(this);
