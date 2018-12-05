@@ -60,7 +60,7 @@ import { Meteor } from 'meteor/meteor';
                 <br/>
                 <h3 className = "text-center">We need you to update your account information to continue, please click the button below to add the information</h3>
                     <br/>
-                    <div class="wrapper">
+                    <div class="wrapper text-center">
                     <button className='btn btn-success' onClick={this.addAccountInfo}>Update account information</button>
                     </div>
                     <br/>
