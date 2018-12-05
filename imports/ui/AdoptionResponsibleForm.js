@@ -10,6 +10,7 @@ class AdoptionResponsibleForm extends Component {
             id:'',
             age: 0,
             address: '',
+            cityArr: ['Bogotá', 'Cali', 'Medellín', 'Barranquilla', 'Cartagena', 'Soledad', 'Cúcuta','Soacha','Ibagué','Bucaramanga', 'Pereira', 'Manizales', 'Santa Marta', 'Armenia', 'Villavicencio'],
             city: '',
             telephoneNumber: '',
             email: ''
@@ -55,6 +56,15 @@ class AdoptionResponsibleForm extends Component {
         window.location.assign("/profile");
         }
 
+        renderCities(){
+            let ops =[]
+            this.state.cityArr.map((r,i)=>{
+                
+                ops.push(<option value={r} key ={i}>{r}</option>)
+            });
+            return ops;
+        }
+
   render() {
     return (
         <div className="container">
@@ -80,7 +90,10 @@ class AdoptionResponsibleForm extends Component {
             </div>
             <div className="form-group">
                 <label>City</label>
-                <input placeholder='Bogotá' className="form-control" type="text" name ="city" id="city" value={this.state.city} onChange={this.handleChange}  required />
+                <select id="city" className="custom-select " name="city" onChange={this.handleChange} >
+                    {this.renderCities()}
+                </select>
+                
             </div>
             <div className="form-group">
                 <label>Telephone Number</label>
