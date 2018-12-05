@@ -27,12 +27,12 @@ class Chat extends Component {
 
 
     handleSubmit(event) {
-        
+        //Usar destructurción de objetos
         event.preventDefault();
-        let msgs = this.state.msg;
+        let msg = this.state.msg;
         let obj = {user:this.props.user, message: this.state.text}
 
-        msgs.push(obj)
+        msg.push(obj)
 
         let chat ={
             msg:this.state.text,
@@ -41,41 +41,31 @@ class Chat extends Component {
         }
         Meteor.call('chat.add', chat);
         this.setState({
-            msg:msgs,
-            text:''});
-
-            
-
+            msg,
+            text:''});   
     }
 
+    //Indentar adecuadamente
     handleChange(event) {
         const value = event.target.value;
         this.setState({
           [event.target.name]: value
         });
-      }
+    }
 
     renderMsg(){
-        return this.props.chats.map((r,i)=>{
-        
-            
+        return this.props.chats.map((r,i)=>{  
                 if(r.idPet == this.state.idPet){
                     return(
                     <p><strong>{r.user}: </strong> {r.msg}</p>
                     );
-                }
-                
-            
+                }    
         })
     }
 
 
 
   render() {
-
-
-
-
     return (
 
         <div class="container">
