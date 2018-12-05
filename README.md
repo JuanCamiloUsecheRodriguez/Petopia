@@ -1,10 +1,10 @@
 # Petopia
 
-Petopia is a web app created to offer people a platfor to adopt an put in adoption their pets.
+Petopia is a web app created to offer people a platform to adopt an put in adoption their pets.
 
 Petopia will also allow new pet owners to calculate the approximate cost of receiving their new friend.
 
-The demo of the app is here 
+You can try the app using the following link.
 
 http://petopiapp.herokuapp.com/
 
@@ -33,7 +33,7 @@ For the development of the app, the technologies used were:
 ## Screenshot 
 Here is a screenshot of the page
 
-<img src="https://scontent.fbog5-1.fna.fbcdn.net/v/t1.0-9/44951167_2783387288353358_3250626086509215744_n.jpg?_nc_cat=100&_nc_ht=scontent.fbog5-1.fna&oh=f9e7b5f7d947949e214e36c3c724d8e4&oe=5C8970D3" alt="Petopia-screenshot">
+<img src="blob:https://www.facebook.com/6a0d9762-a615-44cd-9226-5b5307c4be96" alt="Petopia-screenshot">
 
 ## Authors
 The web page was created by Zulma Castañeda and Juan Camilo Useche.
