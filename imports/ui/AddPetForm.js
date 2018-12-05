@@ -27,7 +27,7 @@ class AddPetForm extends Component {
         story: '',
         image: null,
         species:'Cat',
-        imageUrl:''
+        imageUrl:'https://www.condorferries.co.uk/media/2455/taking-your-pet-5.jpg'
     };
 
     //bind
