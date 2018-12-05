@@ -28,6 +28,6 @@ Meteor.methods({
                     inAdoption: false
                     }
             }
-            );
+        );
     }
 });
