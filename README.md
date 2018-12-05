@@ -33,7 +33,7 @@ For the development of the app, the technologies used were:
 ## Screenshot 
 Here is a screenshot of the page
 
-<img src="blob:https://www.facebook.com/6a0d9762-a615-44cd-9226-5b5307c4be96" alt="Petopia-screenshot">
+<img src="https://www.facebook.com/photo.php?fbid=2867025563322863&set=a.1558235470868552&type=3&eid=ARAuag0fy58YMDkgaqr_sAplrTvGE7q78_eyWTnqw4aAx_efV8pL3MeyKWdYQj3Cvg2hUg2_hRGqtM0O" alt="Petopia-screenshot">
 
 ## Authors
 The web page was created by Zulma Castañeda and Juan Camilo Useche.
