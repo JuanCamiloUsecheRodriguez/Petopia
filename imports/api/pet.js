@@ -18,5 +18,16 @@ Meteor.methods({
             throw new Meteor.Error('not-authorized');
           }
         Pet.insert(pPet);
+    },
+    'pets.adopted':function(idPet){
+        
+        Pet.update(
+            { _id: idPet },
+            {
+                $set: {
+                    inAdoption: false
+                    }
+            }
+            );
     }
 });

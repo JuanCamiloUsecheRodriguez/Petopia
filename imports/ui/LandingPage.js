@@ -10,7 +10,7 @@ export default class LandingPage extends Component {
     render() {
         return (
         <div>
-        <Jumbotron className="pet-background">
+        <Jumbotron className="pet-background black">
           <Container className='black'>
             <h1 className="display-3 text-center proza-libre">ADOPT DON'T BUY</h1>
             <p className="lead">Looking for a pet to <strong>adopt</strong>? We will help you find the perfect match for your home and family.</p>

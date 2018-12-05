@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Meteor } from 'meteor/meteor';
 
 export default class PetCard extends Component {
 
@@ -7,8 +8,14 @@ export default class PetCard extends Component {
     }
 
     adoptButton(id,responsibleId){
-        localStorage.setItem('idPet', id);
-        window.location.assign("/petDetails")
+        if(Meteor.user().profile!==undefined){
+         window.location.assign("/petDetails")
+         localStorage.setItem('idPet', id);
+        }
+        else{
+          window.alert("You need to update your profile information first");
+          window.location.assign("/profile");
+        }
     }
     
       render() {

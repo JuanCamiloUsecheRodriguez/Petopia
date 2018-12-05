@@ -76,7 +76,7 @@ export default class TodoList extends Component {
                     
                     <div className = "row">
                         <div className ="col-md-8"> 
-                       <input type="checkbox" id="vaccinations" onChange={this.recalculate}/>&emsp;&emsp;<label for="Vaccinatios">Vaccinations</label>
+                       <input type="checkbox" id="vaccinations" onChange={this.recalculate}/>&emsp;&emsp;Vaccinations
                         </div>
                         <div className ="col-md-4"> 
                             Pricing: 115.000 COP

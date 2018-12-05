@@ -46,7 +46,9 @@ class ViewPets extends Component {
         });
     }
 
-
+    componentDidMount(){
+        
+    }
     renderPets(currentpets){
         let pets =[]
         
@@ -84,14 +86,20 @@ class ViewPets extends Component {
 
         this.props.pets.map((r,i)=>{
            
-            
+            if(this.props.user.profile !== undefined){
             if(r.rCity.includes(this.props.user.profile.city)){
                 if(r.species == 'Cat' ){
                     cats.push(r);
                 }else if (r.species == 'Dog' ){
                     dogs.push(r);
                 }
-
+            }}
+            else{
+                if(r.species == 'Cat' ){
+                    cats.push(r);
+                }else if (r.species == 'Dog' ){
+                    dogs.push(r);
+                }
             }
         });
 
@@ -106,7 +114,7 @@ class ViewPets extends Component {
     }
 
     componentWillReceiveProps(){
-        this.sortPets()
+        this.sortPets();
     }
 
     paginate(petsArray){
