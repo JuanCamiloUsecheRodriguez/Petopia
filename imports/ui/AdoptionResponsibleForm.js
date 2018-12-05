@@ -11,7 +11,7 @@ class AdoptionResponsibleForm extends Component {
             age: 0,
             address: '',
             cityArr: ['Bogotá', 'Cali', 'Medellín', 'Barranquilla', 'Cartagena', 'Soledad', 'Cúcuta','Soacha','Ibagué','Bucaramanga', 'Pereira', 'Manizales', 'Santa Marta', 'Armenia', 'Villavicencio'],
-            city: '',
+            city: 'Bogotá',
             telephoneNumber: '',
             email: ''
         };
