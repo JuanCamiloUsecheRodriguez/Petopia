@@ -10,6 +10,8 @@ export default class LandingPage extends Component {
     render() {
         return (
         <div>
+            // The landing page for the login in and not login is the same. The feedback of loging is minimum. It is recomended to change this
+            // add
         <Jumbotron className="pet-background black">
           <Container className='black'>
             <h1 className="display-3 text-center proza-libre">ADOPT DON'T BUY</h1>
