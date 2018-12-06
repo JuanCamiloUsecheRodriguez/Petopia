@@ -10,6 +10,8 @@ import { Meteor } from 'meteor/meteor';
         this.state={
             
         }
+     //IT is not UX friendly to register after you have register an account. The ideal thing is when registering the app, you also add
+     //info of who you are
         this.addAccountInfo= this.addAccountInfo.bind(this);
         this.renderAccountInfo= this.renderAccountInfo.bind(this);
     }
